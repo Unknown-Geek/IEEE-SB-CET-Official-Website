@@ -1,10 +1,11 @@
 import React from 'react';
 import { FaSquareFacebook,FaInstagram,FaXTwitter,FaLinkedin,FaRegEnvelope,FaPhone,FaMapLocationDot} from 'react-icons/fa6';
-import logo from "../assets/ieee-sb-logo.png"
-import ieee_logo from "../assets/IEEE_logo.svg"
 
 // import ParticlesBackground from './Particles';
 import { Link } from 'react-router-dom';
+
+const logo = "/ieee-sb-logo.png";
+const ieee_logo = "/IEEE_logo.svg";
 
 export const Footer = () => {
     return<footer id="contact" className="bg-gray-900 text-white">

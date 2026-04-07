@@ -1,6 +1,5 @@
 import React from 'react';
-import {FaLinkedin, FaSquareGithub, FaRegEnvelope} from 'react-icons/fa6'
-import { Link } from 'react-router-dom';
+import { FaLinkedin, FaRegEnvelope } from 'react-icons/fa6';
 
 export const MemberCard = ({id, image_url, name, designation, linkedin_url, email}) => {
   return (
@@ -15,14 +14,20 @@ export const MemberCard = ({id, image_url, name, designation, linkedin_url, emai
           <p className="text-[#006699] font-medium mb-3 text-center">{designation}</p>
         </div>
 
-        <div className="flex space-x-3 justify-center mt-4">
-          <a href={linkedin_url} className="text-gray-600 hover:text-[#006699]" target="_blank" rel="noopener noreferrer">
-            <FaLinkedin size={20} />
-          </a>
-          <a href={`mailto:${email}`} className="text-gray-600 hover:text-[#006699]" target="_blank" rel="noopener noreferrer">
-            <FaRegEnvelope size={20} />
-          </a>
-        </div>
+        {(linkedin_url || email) && (
+          <div className="flex space-x-3 justify-center mt-4">
+            {linkedin_url && (
+              <a href={linkedin_url} className="text-gray-600 hover:text-[#006699]" target="_blank" rel="noopener noreferrer">
+                <FaLinkedin size={20} />
+              </a>
+            )}
+            {email && (
+              <a href={`mailto:${email}`} className="text-gray-600 hover:text-[#006699]" target="_blank" rel="noopener noreferrer">
+                <FaRegEnvelope size={20} />
+              </a>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

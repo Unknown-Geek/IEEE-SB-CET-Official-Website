@@ -1,0 +1,72 @@
+const execom2026ImageModules = import.meta.glob("../assets/Execom/2026/*", {
+  eager: true,
+  import: "default",
+});
+
+const execom2026Images = Object.fromEntries(
+  Object.entries(execom2026ImageModules).map(([path, imageUrl]) => [
+    path.split("/").pop(),
+    imageUrl,
+  ])
+);
+
+const member = (id, designation, name, imageFile) => ({
+  id,
+  designation,
+  name,
+  image_url: execom2026Images[imageFile] || "",
+  linkedin_url: "",
+  email: "",
+});
+
+export const execom2026Members = [
+  member(1, "IEEE Student Branch Chairperson", "Afsal V N", "Afsal VN_IEEE Student Branch Chairperson.webp"),
+  member(2, "IEEE Student Branch Vice-Chairperson", "Agnij T Dev", "Agnij T Dev_IEEE Student Branch Vice-Chairperson.webp"),
+  member(3, "IEEE Student Branch Secretary", "Isha Shaji", "Isha Shaji_IEEE Student Branch Secretary.webp"),
+  member(4, "IEEE Student Branch Treasurer", "Richard John", "Richard John_IEEE Student Branch Treasurer.webp"),
+  member(5, "IEEE Student Branch Joint Secretary", "Lydia Ann Sam", "Lydia Ann Sam_IEEE Student Branch Joint Secretary.webp"),
+  member(6, "Technical Coordinator", "Kailasnath A", "Kailasnath A_Technical Coordinator.webp"),
+  member(7, "Program Coordinator", "Mohammed Marzuq", "Mohammed Marzuq A___Program Coordinator.webp"),
+  member(8, "LINK Representative", "Kiran Dev Krishna", "Kiran Dev Krishna M_LINK Representative.webp"),
+  member(9, "Membership Development Coordinator", "Jacob Biju", "Jacob Biju_Membership Development Coordinator.webp"),
+  member(10, "Membership Development Coordinator", "Varsha Aney Kurian", "Varsha Aney Kurian_Membership Development Coordinator.webp"),
+  member(11, "Membership Development Coordinator", "Tejas Premod", "Tejas Premod_Membership Development Coordinator.webp"),
+  member(12, "Membership Development Coordinator", "Abhinav B Nair", "Abhinav B Nair_Membership Development Coordinator.webp"),
+  member(13, "Webmaster", "Shravan Nander Pandala", "Shravan Nander Pandala_.Webmaster.webp"),
+  member(14, "Webmaster", "Joseph Savio", "Joseph Savio_Webmaster.webp"),
+  member(15, "Computer Society Chairperson", "Navya M J", "Navya MJ___Computer Society Chairperson.webp"),
+  member(16, "Computer Society Vice-Chairperson", "Abhijith S Unni", "Abhijith S Unni_Computer Society Vice-Chairperson.webp"),
+  member(17, "Women in Computing Student Representative", "Niharika S", "Niharika S___Women in Computing Student Representative.webp"),
+  member(18, "Robotics and Automation Society Chairperson", "Madhav Karat", "Madhav Karat_Robotics and Automation Society Chairperson.webp"),
+  member(19, "Robotics and Automation Society Vice-Chairperson", "Prajwel Suresh", "Prajwel Suresh__Robotics and Automation Society Vice Chairperson.webp"),
+  member(20, "Power and Energy Society Chairperson", "Philip Boby", "Philip Boby Panachikkal__Power and Energy Society Chairperson.webp"),
+  member(21, "Power and Energy Society Vice-Chairperson", "Arjun S Nair", "Arjun S Nair_Power and Energy Society Vice-Chairperson.webp"),
+  member(22, "Women in Power Student Representative", "Jovina James", "Jovina James _Women in Power Student Representative.webp"),
+  member(23, "Women in Engineering Chairperson", "Afreen Abnas", "Afreen Abnas_Women in Engineering Chairperson.webp"),
+  member(24, "Women in Engineering Vice-Chairperson", "Malavika P Nair", "Malavika P Nair___Women in Engineering Vice Chair.webp"),
+  member(25, "Signal Processing Society Chairperson", "Fenza Maria", "Fenza Maria_Signal Processing Society Chairperson.webp"),
+  member(26, "Signal Processing Society Vice-Chairperson", "Nivedya Sivan", "Nivedya Sivan__Signal Processing Society Vice Chairperson.webp"),
+  member(27, "Power Electronics Society Chairperson", "Abhinav Krishna B", "Abhinav Krishna B_Power Electronics Society Chairperson.webp"),
+  member(28, "Power Electronics Society Vice-Chairperson", "A Adithya", "A Adithya_Power Electronics Society Vice-Chairperson.webp"),
+  member(29, "Industrial Applications Society Chairperson", "C S ABHIRAM", "CS Abhiram_Industrial Applications Society Chairperson.webp"),
+  member(30, "Industrial Applications Society Vice-Chairperson", "Nakul G", "Nakul G__Industrial Applications Society Vice Chairperson.webp"),
+  member(31, "Control Systems Society Chairperson", "Sarosh Biji Zachariyah", "Sarosh Biji Zachariah_Control Systems Society Chairperson.webp"),
+  member(32, "Control Systems Society Vice Chairperson", "Shreya Nair", "Shreya Nair_Control Systems Society Vice Chairperson.webp"),
+  member(33, "Aerospace and Electronic Systems Society Chairperson", "Yashnik", "Yashnik M_Aerospace and Electronic Systems Society Chairperson.webp"),
+  member(34, "Aerospace and Electronic Systems Society Vice-Chairperson", "Thejas J Anil", "Thejas J Anil_Aerospace and Electronic Systems Society Vice-Chairperson.webp"),
+  member(35, "Special Interest Group on Humanitarian Technology Chairperson", "Aleena Leen", "Aleena Leen_Special Interest Group on Humanitarian Technology Chairperson.webp"),
+  member(36, "Special Interest Group on Humanitarian Technology Vice-Chairperson", "Gauri J", "Gauri J_Special Interest Group on Humanitarian Technology Vice-Chairperson.webp"),
+  member(37, "Computational Intelligence Society Chairperson", "Meera R S", "Meera RS__Computational Intelligence Society Chairperson.webp"),
+  member(38, "Computational Intelligence Society Vice-Chairperson", "Abhinav S", "Abhinav S_Computational Intelligence Society Vice-Chairperson.webp"),
+  member(39, "Design Team Lead", "Anirudh S Nair", "Anirudh S Nair_Design Team Lead.webp"),
+  member(40, "Design Team Co-Lead", "Ashwin Biju", "Ashwin Biju_Design Team Co-Lead.webp"),
+  member(41, "Content Team Lead", "Nivin Ajith", "Nivin Ajith___Content Team Lead.webp"),
+  member(42, "Content Team Co-Lead", "Deborah Suresh", "Deborah Suresh_Content Team Co-Lead.webp"),
+  member(43, "Newsletter Design Lead", "Jalvin Jomy A", "Jalvin Jomy A_Newsletter Design Lead.webp"),
+  member(44, "Newsletter Content lead", "Shreya Ashish", "Sreya Ashish_Newsletter Content lead.webp"),
+  member(45, "Project Lead", "Alpha M M", "Alpha M M_Project Lead.webp"),
+  member(46, "Project Lead", "Amrita Jiju", "Amrita Jiju_Project Lead.webp"),
+  member(47, "Project Team Member", "Vinayak H", "Vinayak H_Project Team Member 1.webp"),
+  member(48, "Project Team Member", "Gokul Krishna", "Gokul Krishna S_Project Team Member - 2.webp"),
+  member(49, "Project Team Member", "Joel Lijo", "Joel Lijo Mathew_Project Team Member - 3.webp"),
+];

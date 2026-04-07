@@ -1,9 +1,10 @@
 import React from "react";
 import Slider from "react-slick";
-import execom  from "../assets/execom-2024.jpg"
-import akrasc from "../assets/akrasc.jpg"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+
+const execom = "/execom-2024.jpg";
+const akrasc = "/akrasc.jpg";
 
 function Carousel() {
   const settings = {

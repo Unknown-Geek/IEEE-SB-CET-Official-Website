@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { MenuIcon, XIcon, ChevronDown } from "lucide-react";
-import logo from "../assets/ieee-sb-logo.png";
 import { Link } from "react-router-dom";
+
+const logo = "/ieee-sb-logo.png";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

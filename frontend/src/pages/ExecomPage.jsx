@@ -1,6 +1,7 @@
 import React from 'react';
 import { MemberCard } from '../components/MemberCard';
 import { fetchExecom } from '../services/api';
+import { execom2026Members } from '../data/execom2026';
 import {
   Select,
   SelectContent,
@@ -11,7 +12,7 @@ import {
 export const ExecomPage = () => {
 
   
-  const [year, setYear] = React.useState(2025);
+  const [year, setYear] = React.useState(2026);
   const [teamMembers, setTeamMembers] = React.useState([]);
   const [mounted, setMounted] = React.useState(false);
 
@@ -19,6 +20,12 @@ export const ExecomPage = () => {
     const loadTeamMembers = async () => {
       // Reset animation before loading
       setMounted(false);
+
+      if (year === 2026) {
+        setTeamMembers(execom2026Members);
+        setTimeout(() => setMounted(true), 30);
+        return;
+      }
 
       const data = await fetchExecom(year);
       if (data) {
@@ -52,7 +59,7 @@ export const ExecomPage = () => {
   <SelectValue placeholder={year} />
   </SelectTrigger>
   <SelectContent>
-              {[2025, 2024, 2023, 2022].map((y) => (
+                {[2026, 2025, 2024, 2023, 2022].map((y) => (
             <SelectItem 
               key={y} 
               value={y}            >
@@ -74,10 +81,10 @@ export const ExecomPage = () => {
               style={{ transitionDelay: `${idx * 80}ms` }}
             >
               <MemberCard
-                image_url={`/execom/`+year+`/`+member.image_url}
+                image_url={year === 2026 ? member.image_url : `/execom/${year}/${member.image_url}`}
                 name={member.name}
                 designation={member.designation}
-                linkedin={member.linkedin_url}
+                linkedin_url={member.linkedin_url}
                 email={member.email}
               />
             </div>
